@@ -9,6 +9,7 @@ using namespace std;
 
 int main()
 {
-    Scorecard* board = new Scorecard();
+    Scorecard *board = new Scorecard();
+    board->printBoard();
     delete board;
 }

@@ -7,11 +7,13 @@ class Cell
 {
 protected:
     int value;
+    string name;
 
 public:
-    Cell();
-    ~Cell();
-    void setValue();
+    //Cell();
+    void setValue(int);
+    void setName(string);
+    string getName();
     int getValue();
 };
 

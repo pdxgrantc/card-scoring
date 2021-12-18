@@ -12,9 +12,57 @@ bool isNumber(const string &str);
 Scorecard::Scorecard()
 {
     cout << "created scorecard" << endl;
-    int numPlayers = takeNumPlayers();
+    numPlayers = takeNumPlayers();
     // make the array
+    ary = new Cell *[numPlayers];
+    for (int i = 0; i < numPlayers; i++)
+    {
+        ary[i] = new Cell[13];
+        for (int j = 0; j < 13; j++)
+        {
+            if (i == 0)
+            {
+                ary[i][j].setName("Grant");
+            }
+            ary[i][j].setValue(0);
+        }
+    }
+}
 
+void Scorecard::printBoard()
+{
+    int width = 0;
+    for (int i = 0; i < numPlayers; i++)
+    {
+        cout << "|";
+        for (int j = 0; j < 13; j++)
+        {
+            if (i == 0)
+            {
+                width = ary[i][j].getName().length();
+                cout << ary[i][j].getName() << "|";
+            }
+            else {
+                cout << "  " << ary[i][j].getValue() << "  |";
+            }
+        }
+        cout << endl;
+    }
+}
+
+void Scorecard::updateTotals()
+{
+    // print function for lenth
+}
+
+Scorecard::~Scorecard()
+{
+    // go through the array and free the cell mallocs
+    for (int i = 0; i < numPlayers; i++)
+    {
+        delete[] ary[i];
+    }
+    delete[] ary;
 }
 
 // Class functions
@@ -42,8 +90,8 @@ int Scorecard::takeNumPlayers()
 }
 
 // Utility functions
-void makeArray(int numPlayers) {
-
+void makeArray(int numPlayers)
+{
 }
 
 bool isNumber(const string &str)
