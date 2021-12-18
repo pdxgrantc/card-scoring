@@ -11,7 +11,8 @@ bool isNumber(const string &str);
 
 Scorecard::Scorecard()
 {
-    cout << "created scorecard" << endl;
+    string testString = "Grantler";
+    testString.resize(5);
     numPlayers = takeNumPlayers();
     // make the array
     ary = new Cell *[numPlayers];
@@ -22,7 +23,7 @@ Scorecard::Scorecard()
         {
             if (i == 0)
             {
-                ary[i][j].setName("Grant");
+                ary[i][j].setName(testString);
             }
             ary[i][j].setValue(0);
         }
@@ -42,8 +43,20 @@ void Scorecard::printBoard()
                 width = ary[i][j].getName().length();
                 cout << ary[i][j].getName() << "|";
             }
-            else {
-                cout << "  " << ary[i][j].getValue() << "  |";
+            else
+            {
+                if (ary[i][j].getValue() < 10)
+                {
+                    cout << "  " << ary[i][j].getValue() << "  |";
+                }
+                else if (ary[i][j].getValue() < 100)
+                {
+                    cout << "  " << ary[i][j].getValue() << " |";
+                }
+                else
+                {
+                    cout << " " << ary[i][j].getValue() << " |";
+                }
             }
         }
         cout << endl;
