@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Dec 17 21:06:18 2021
+# Make data base, printed on Fri Dec 17 21:18:53 2021
 
 # Variables
 
@@ -227,7 +227,6 @@ QT_ACCESSIBILITY = 1
 # environment
 DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 # makefile (from 'Makefile', line 2)
- 
 exeFile = app
 # default
 MAKEFILES := 
@@ -274,9 +273,9 @@ VSCODE_PID = 2408
 
 # Directories
 
-# . (device 66311, inode 3019530): 9 files, no impossibilities.
+# . (device 66311, inode 3019530): 10 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -296,21 +295,29 @@ scorecard.o: scorecard.cpp
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 8):
+ 
 	$(cc) -c scorecard.cpp
+
+cell.o: cell.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 10):
+	$(cc) -c cell.cpp
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-12-17 21:06:11.147794994
+#  Last modified 2021-12-17 21:18:29.708830707
 #  File has been updated.
 #  Successfully updated.
 
-app: main.o scorecard.o
+app: main.o scorecard.o cell.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 4):
-	$(cc) main.o scorecard.o -o $(exeFile)
+	$(cc) main.o scorecard.o cell.o -o $(exeFile)
 
 # Not a target:
 main.cpp:
@@ -328,11 +335,17 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 11):
+#  recipe to execute (from 'Makefile', line 13):
 	rm -f *.o app
 
 # Not a target:
 scorecard.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+cell.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -345,19 +358,19 @@ main.o: main.cpp
 	$(cc) -c main.cpp
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/26=0%
+# Load=12/1024=1%, Rehash=0, Collisions=0/31=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 146 B / avg = 8 B
-# current buf: size = 8162 B / used = 146 B / count = 17 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 20 / storage = 169 B / avg = 8 B
+# current buf: size = 8162 B / used = 169 B / count = 20 / avg = 8 B
 
-# strcache performance: lookups = 30 / hit rate = 43%
+# strcache performance: lookups = 35 / hit rate = 42%
 # hash-table stats:
-# Load=17/8192=0%, Rehash=0, Collisions=1/30=3%
-# Finished Make data base on Fri Dec 17 21:06:18 2021
+# Load=20/8192=0%, Rehash=0, Collisions=1/35=3%
+# Finished Make data base on Fri Dec 17 21:18:53 2021
 
  

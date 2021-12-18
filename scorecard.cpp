@@ -1,22 +1,24 @@
 #include <iostream>
 #include <string>
 #include "scorecard.h"
+#include "cell.h"
 
 using namespace std;
+
+// Function declarations
+void makeArray(int numPlayers);
+bool isNumber(const string &str);
 
 Scorecard::Scorecard()
 {
     cout << "created scorecard" << endl;
-    //int numPlayers = takeNumPlayers();
+    int numPlayers = takeNumPlayers();
+    // make the array
+
 }
 
-/*
-bool isNumber(const string &str)
-{
-    return str.find_first_not_of("0123456789") == string::npos;
-}
-
-int takeNumPlayers()
+// Class functions
+int Scorecard::takeNumPlayers()
 {
     int numPlayers;
     string cache;
@@ -38,4 +40,13 @@ int takeNumPlayers()
     }
     return numPlayers;
 }
-*/
+
+// Utility functions
+void makeArray(int numPlayers) {
+
+}
+
+bool isNumber(const string &str)
+{
+    return str.find_first_not_of("0123456789") == string::npos;
+}
