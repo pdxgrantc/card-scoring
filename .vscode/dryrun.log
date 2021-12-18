@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/pdxgrantc/code/personal/card-scoring'
+g++ -c scorecard.cpp
+g++ main.o scorecard.o -o app
+make: Leaving directory '/home/pdxgrantc/code/personal/card-scoring'
+ 

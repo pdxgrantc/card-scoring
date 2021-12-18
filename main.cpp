@@ -2,18 +2,17 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string>
+#include "scorecard.h"
 
 using namespace std;
 
-int takeNumPlayers();
-bool isNumber(const string &);
-
 int main()
 {
-    Scorecard board = new Scorecard();
+    Scorecard* board = new Scorecard();
     delete board;
 }
 
+/*
 class Scorecard
 {
 private:
@@ -53,3 +52,4 @@ public:
         int numPlayers = takeNumPlayers();
     }
 };
+*/

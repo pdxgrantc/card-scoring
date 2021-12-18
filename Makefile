@@ -1,11 +1,11 @@
 cc = g++
 exeFile = app
-$(exeFile): main.o
-	$(cc) main.o -o $(exeFile)
+$(exeFile): main.o scorecard.o
+	$(cc) main.o scorecard.o -o $(exeFile)
 main.o: main.cpp
 	$(cc) -c main.cpp
-scoreboard.o: scoreboard.cpp
-	$(cc) -c scoreboard.cpp
+scorecard.o: scorecard.cpp
+	$(cc) -c scorecard.cpp
 
 clean:
 	rm -f *.o app
