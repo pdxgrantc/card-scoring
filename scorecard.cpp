@@ -25,7 +25,7 @@ Scorecard::Scorecard()
             {
                 ary[i][j].setName(testString);
             }
-            ary[i][j].setValue(0);
+            ary[i][j].setValue(1);
         }
     }
 }
@@ -35,6 +35,10 @@ void Scorecard::printBoard()
     int width = 0;
     for (int i = 0; i < numPlayers; i++)
     {
+        if (i == (numPlayers - 1))
+        {
+            cout << "Totals:" << endl;
+        }
         cout << "|";
         for (int j = 0; j < 13; j++)
         {
@@ -45,17 +49,27 @@ void Scorecard::printBoard()
             }
             else
             {
-                if (ary[i][j].getValue() < 10)
+                int num = ary[i][j].getValue();
+                string outputVal;
+                if (num == 0)
                 {
-                    cout << "  " << ary[i][j].getValue() << "  |";
-                }
-                else if (ary[i][j].getValue() < 100)
-                {
-                    cout << "  " << ary[i][j].getValue() << " |";
+                    outputVal = ' ';
                 }
                 else
                 {
-                    cout << " " << ary[i][j].getValue() << " |";
+                    outputVal = to_string(num);
+                }
+                if (num < 10)
+                {
+                    cout << "  " << outputVal << "  |";
+                }
+                else if (num < 100)
+                {
+                    cout << "  " << outputVal << " |";
+                }
+                else
+                {
+                    cout << " " << outputVal << " |";
                 }
             }
         }
